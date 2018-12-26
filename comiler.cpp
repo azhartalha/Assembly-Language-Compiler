@@ -615,6 +615,7 @@ void readFromFile(FILE * fr)
         }
         printf("\n");
     }
+    printf("\n\n");
     codeExecution(interLang, lp, constants, constantsTable, constantstCount);
 }
 
@@ -622,10 +623,12 @@ int main()
 {
 
     FILE * fr = fopen("interCode.txt", "r");
-	if(fr!= NULL)
-        printf("Intermediate code available do you want to execute program from it (0/1)? ");
-    int op;
-    scanf("%d", &op);
+    int op = 0;
+    if(fr!= NULL)
+    {
+	    printf("Intermediate code available do you want to execute program from it (0/1)? ");
+    	    scanf("%d", &op);
+    }
     if(op == 1)
     {
         readFromFile(fr);
