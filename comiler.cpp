@@ -553,6 +553,7 @@ int** generateOpcode(FILE* fr, int& lp)
         }
         printf("\n");
     }
+    printf("\n\n");
     fclose(fr);
     FILE * fp = fopen("interCode.txt", "w"); // Storing the constants and the intermediate code in a file -1 denotes there is no value there
     fprintf(fp, "%d\n", constantstCount);
